@@ -1,12 +1,22 @@
 h1 {
-	color: red;
-	size: 24;
+	color: #FFFFFF;
+	font-size: 50pt;
 	text-align: center;
+}
+
+th {
+	padding: 50px;
+	font-size: 18pt;
 }
 
 
 p {
-	color: black;
+	color: #FFFFFF;
 	text-align: center;
 	
+}
+
+a {
+	color: #FFFFFF;
+	text-align: center;
 }
