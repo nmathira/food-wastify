@@ -35,10 +35,14 @@ hr {
 		padding:15px;
 }
 
-
-.focus {
-	padding-top: 80px
-	background-color: #aaaaaa
+.focus-left {
+	position: absolute;
+	padding-top: 50px;
+	left: 13.5%;
+	font-family: Verdana;
+	font-size: 16pt;
+	color: #ffffff;
+	text-align: left;
 }
 
 
