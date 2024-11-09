@@ -1,7 +1,8 @@
 import io
 
-from fastapi import FastAPI, UploadFile
+import uvicorn
 from PIL import Image
+from fastapi import FastAPI, UploadFile
 
 app = FastAPI()
 
@@ -19,9 +20,21 @@ async def say_hello(name: str):
 @app.post("/upload-food")
 async def upload_image(file: UploadFile):
     try:
-        image = Image.open(io.BytesIO(await file.read()))
-        image.verify()
-        image.save("/home/niranjan/downloads/asdf/api-image"+str(hash(image)))
-        return {"message": "yipeee the image verified lol"}
+        image_bytes = await file.read()
+
+        image = Image.open(io.BytesIO(image_bytes))
+        # image.verify()  # Verify the image is not corrupted
+
+        # Re-open the image to save it, as `verify()` makes the image unusable
+        image = Image.open(io.BytesIO(image_bytes))
+
+        # Generate a unique filename
+        image_path = f"/home/niranjan/downloads/asdf/api-image-{hash(image)}.jpg"
+
+        image.save(image_path)
     except Exception as e:
         return {"error": str(e)}
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="localhost", port=8080)
