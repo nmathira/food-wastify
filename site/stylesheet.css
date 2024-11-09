@@ -2,9 +2,11 @@ html {
 	scroll-behavior: smooth;
 }
 
+
 body {
 	background-color: #881c1c
 }
+
 
 h1 {
 	color: #ffffff;
@@ -12,10 +14,12 @@ h1 {
 	text-align: center;
 }
 
+
 .header {
 		background: #000000;
 		padding:15px;
 }
+
 
 .github-repo {
 	width: 55px;
@@ -33,9 +37,9 @@ h1 {
 	font-size: 200pt;
 	color: #ffffff;
 	font-family: Arial;
-	z-index: 10;
-	
+	z-index: 10;	
 }
+
 
 .parallax {
       position: relative;
@@ -49,6 +53,7 @@ h1 {
       color: white; 
       text-align: center; 
 }
+
 
 .parallax::after {
 	content: ' ';
@@ -77,8 +82,8 @@ th {
 p {
 	color: #ffffff;
 	text-align: center;
-	
 }
+
 
 a {
 	color: #ffffff;
