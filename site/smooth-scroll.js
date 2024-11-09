@@ -1,4 +1,4 @@
-let scrollSpeed = 30; 
+let scrollSpeed = 7; 
 
 window.addEventListener('wheel', function(event) {
     event.preventDefault();
