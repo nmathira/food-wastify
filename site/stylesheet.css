@@ -18,31 +18,46 @@ h1 {
 
 h2 {
 	color: #ffffff;
-	padding-left: 250px;
+	padding-left: 150px;
 	font-family: Arial;
+	font-size: 14pt;
 }
 
 
 hr {
 	color:#ffffff;
-	width: 75%;
+	width: 85%;
 	text-align: center;	
+}
+
+
+th {
+	padding-top: 0px;
+	padding-bottom: 15px;
+	padding-left: 25px;
+	padding-right:25px;
+	font-size: 18pt;
+	color: #ffffff;
+}
+
+
+p {
+	color: #ffffff;
+	text-align: center;
+}
+
+
+a {
+	color: #ffffff;
+	text-align: center;
 }
 
 
 .header {
 		background: #000000;
 		padding:15px;
-}
-
-.focus-left {
-	position: absolute;
-	padding-top: 50px;
-	left: 13.5%;
-	font-family: Verdana;
-	font-size: 16pt;
-	color: #ffffff;
-	text-align: left;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
 }
 
 
@@ -70,21 +85,23 @@ hr {
 
 
 .parallax {
-      position: relative;
-      height: 100vh;
-      background-image: url('https://www.umass.edu/sites/default/files/2023-03/umass-sustainable-dining.jpg');
-      background-size: cover;
-      background-position: center;
-      display: flex; 
-      align-items: center; 
-      justify-content: center;
-      color: white; 
-      text-align: center; 
+      	position: relative;
+      	height: 100vh;
+      	background-image: url('https://www.umass.edu/sites/default/files/2023-03/umass-sustainable-dining.jpg');
+      	background-size: cover;
+      	background-position: center;
+      	display: flex; 
+      	align-items: center; 
+      	justify-content: center;
+      	color: white; 
+      	text-align: center; 
+      	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
 }
 
 
 .parallax::after {
-	content: ' ';
+	content: '';
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -94,26 +111,70 @@ hr {
 	height: 100%;
 	background-color: rgba(0,0,0,0.5);
 	z-index: 1;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
 }
 
 
-th {
-	padding-top: 0px;
-	padding-bottom: 15px;
-	padding-left: 25px;
-	padding-right:25px;
-	font-size: 18pt;
+.focus {
+	display: flex;
+	padding-bottom: 70px;
+}
+
+
+.focus-left {
+	width: 40%;
+	padding: 25px;
+	padding-left: 150px;
+	font-family: Verdana;
+	font-size: 24pt;
+	color: #ffffff;
+	text-align: left;
+}
+
+
+.focus-right {
+	width: 40%;
+	position: right;
+	padding: 25px;
+	padding-right: 150px;
+	font-family: Verdana;
+	font-size: 16pt;
 	color: #ffffff;
 }
 
 
-p {
-	color: #ffffff;
-	text-align: center;
+.table-container {
+	display: flex;
+	justify-content: space-around;
 }
 
 
-a {
+.table-container table { 
+      	border-collapse: collapse;
+      	border-radius: 10px; 
+      	overflow: hidden; 
+      	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	background-color: #770b0b;
+    }
+
+.table-container th {
+      	padding: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+      	text-align: center;
+	font-size: 12pt;
 	color: #ffffff;
-	text-align: center;
+	font-weight: normal;
+    }
+
+
+.test {
+	padding: 15px;
+	padding-bottom: 700px;
+	border-radius:20px; 
+	position: center;
+	background-color: #770b0b;
+	
 }
+
