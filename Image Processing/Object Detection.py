@@ -2,6 +2,7 @@ import numpy as np
 import cv2 as cv
 import time
 import requests
+import io
 
 cam = cv.VideoCapture(1)
 
@@ -41,7 +42,7 @@ while True:
                 # request = requests.post("http://192.168.137.1:8080//upload-food", files={"file": ("image.jpg", io.BytesIO(encoded), "image/jpeg")})
                 
                 print('Image saved')
-                in_motion = False
+            in_motion = False
     
     last = frame
     counter += 1
