@@ -11,30 +11,42 @@
 			<div class = "header">
 				<div class = "container">
 					<a href = "https://umassdining.com/">
-						<img src = "https://umassdining.com/sites/all/themes/umass_dining_new/images/logo.png" height = "55px">
+						<img src = "https://umassdining.com/sites/all/themes/umass_dining_new/images/logo.png" height = "55px" style = "position: absolute;"></img>
 					</a>
-					<div class = "header-title" id = "header-title">ZeroByte</div>	
+					<div class = "header-title" id = "header-title">ZeroByte</div>
+					<div class = "header-subtitle"> Individual Insights</div>	
 
 					<div class = "borgir" id = "borgir">
-						<img src = "https://upload.wikimedia.org/wikipedia/commons/2/27/HAMBURGERMENU.png" style = "height: 55px; width:55px;">
+						<img src = "https://upload.wikimedia.org/wikipedia/commons/2/27/HAMBURGERMENU.png" style = "height: 55px; width:55px;"></img>
 					</div>
 
 					<ul class = "navlinks" id = "navlinks">
 						<li><a href ="zerobyte.html" >Home</a></li>
 						<li><a href ="#" >About</a></li>
 					</ul>
-					<script src = "borgir.js"></script>
-					
-					<script src = "borgir.js"></script>
+	
 				</div>
 			</div>
 			
-			<div class = "item">
-				<h2>Placeholder</h2>
-				<hr>
-				<p  style = "padding-bottom: 1200px"></p>
-
-			</div>
+			<template id = "item-template">	
+				<div class = "item">
+					<div class = "item-title" data-title="Item">Item </div>
+			
+						<div class = "data-container">
+							<img class = "item-image" src = "https://placehold.co/128x128" data-image-url = "https://placehold.co/128x128">
+			
+							<table>
+								<tr><td data-table-cell = "Type of Food: []">Type of Food: []</td></tr>
+								<tr><td data-table-cell = "How much to reduce: []">How much to reduce: []</td></tr>
+								<tr><td data-table-cell = "Sustainability Grade: []">Sustainability Grade: []</td></tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</template>
+			<div class = "item-container" id = "item-container"></div>
+			
+			<script src= "instantiate.js"></script>
 
 		</body>
 
