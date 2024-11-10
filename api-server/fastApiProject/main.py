@@ -87,3 +87,6 @@ if __name__ == "__main__":
     annotations = test_run_annotations("/home/niranjan/documents/projects/hack-umass-2024/ZeroByte/yippeee.txt")
     araes = calculate_waste_percent(annotations)
     print(araes)
+
+
+
