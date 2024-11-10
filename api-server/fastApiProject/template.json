@@ -1,22 +1,26 @@
 [
-    {
-        "name": "Apple",
-        "sustainability_score": 5,
-        "times_eaten": 15
-    },
-    {
-        "name": "Orange",
-        "sustainability_score": 1,
-        "times_eaten": 4
-    },
+  {
+    "name": "Apple",
+    "sustainability_score": 5,
+    "times_eaten": 15,
+    "percentage": 0.50
+  },
+  {
+    "name": "Orange",
+    "sustainability_score": 1,
+    "times_eaten": 4,
+    "percentage": 0.50
+  },
   {
     "name": "Cereal",
     "sustainability_score": 3,
-    "times_eaten": 4
+    "times_eaten": 4,
+    "percentage": 0.50
   },
   {
     "name": "French Fries",
     "sustainability_score": 4,
-    "times_eaten": 10
+    "times_eaten": 10,
+    "percentage": 0.50
   }
 ]
