@@ -5,7 +5,7 @@
 			<link rel = "stylesheet" href = "stylesheet.css">
 			<title>zerobyte</title>
 
-			 <script>
+			<script>
     
     				window.addEventListener('scroll', function() {
       					const parallax = document.getElementById('parallax');
@@ -14,9 +14,7 @@
 				});
 
   			</script>
-
 			<script src = "fadeintext.js"></script>
-
 		</head>
 		
 		<body>
@@ -28,27 +26,31 @@
 						<img src = "https://umassdining.com/sites/all/themes/umass_dining_new/images/logo.png" height = "55px">
 					</a>
 
-					<div class = "menu">
+					<div class = "borgir" id = "borgir">
 						<img src = "https://upload.wikimedia.org/wikipedia/commons/2/27/HAMBURGERMENU.png" style = "height: 55px; width:55px;">
 					</div>
-							
 
+					<ul class = "navlinks" id = "navlinks">
+						<li><a href ="#goals" >Our Goal</a></li>
+						<li><a href ="zerobyte.html#food">Generate Food Insights</a></li>
+						<li><a href = "indiv.html">Individual Insights</a></li>
+						<li><a href ="#" >About</a></li>
+					</ul>
+					<script src = "borgir.js"></script>
+					
 				</div>
 			</div>
 			
 			<div class = "overlay-main-text" id = "big-text">ZeroByte</div>
-			<div class = "container" id="arrow-container">	
-				<div id="arrow" class="arrow">↓</div>
-			</div>	
+			<div id="arrow" class="arrow">↓</div>
 			<div class = "parallax" id = "parallax"></div>	
-
-			
 	
 			
-			<h2 style="padding-top:70px">Our Focus</h2>
+			<h2 style="padding-top:70px" id = "goals">Our Focus</h2>
 			<hr>
-			<div class = "focus">
+			<div class = "focus" id = "focus">
 				<div class="focus-left">We’re passionate about reducing food waste and have developed effective strategies that drive sustainable change at every dining hall.</div>
+				<script src = "fadeincontent.js"></script>
 				<div class = "focus-right">
 					
 					<div class = "table-container">
@@ -64,12 +66,13 @@
 			</div>
 	
 
-			<div class = "test">
-			
-				<h3 style="font-size:200pt">Placeholder</h3>
+			<div class = "food" id = "food">
+				<h2>Placeholder</h2>
+				<hr>
+				<p  style = "padding-bottom: 1200px"></p>
 
 			</div>
-			
+		
 		</body>
 
 	</html>

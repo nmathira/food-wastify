@@ -1,0 +1,115 @@
+html {
+	scroll-behavior: smooth;
+}
+
+
+body {
+	background-color: #881c1c;	
+}
+
+
+h1 {
+	color: #ffffff;
+	font-size: 50pt;
+	text-align: center;
+}
+
+
+h2 {
+	color: #ffffff;
+	padding-left: 150px;
+	font-family: Verdana;
+	font-size: 14pt;
+}
+
+
+hr {
+	color:#ffffff;
+	width: 85%;
+	text-align: center;	
+}
+
+
+th {
+	padding-top: 0px;
+	padding-bottom: 15px;
+	padding-left: 25px;
+	padding-right:25px;
+	font-size: 18pt;
+	color: #ffffff;
+}
+
+
+p {
+	color: #ffffff;
+	text-align: center;
+}
+
+
+a {
+	color: #ffffff;
+	text-align: center;
+}
+
+
+.header {
+		background: #000000;
+		padding: 20px;
+		border-radius: 20px;
+}
+
+
+.header-title {
+	position: absolute;
+	top: 1.75%;
+	left:42%;
+	font-family: Verdana;
+	color: #ffffff;
+	font-size: 44pt;	
+}
+
+.borgir {
+	float:right;
+	float: top;
+	height: 55px; 
+	width: 55px;
+}
+
+
+.navlinks {
+	display: none;
+	list-style: none;
+}
+
+
+.navlinks.active {
+	display: flex;
+	justify-content: center;
+}
+
+
+.navlinks li{	
+	padding-right: 40px;
+	padding-left: 40px;
+}
+
+
+.navlinks a{
+	color: white;
+	font-family: Verdana;
+	font-size: 12pt;
+	text-decoration: none;
+}
+
+
+.food {
+	padding: 15px;
+	padding-bottom: 30px;
+	border-radius:20px; 
+	position: center;
+	background-color: #770b0b;
+	
+}
+
+
+

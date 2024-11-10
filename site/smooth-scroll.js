@@ -1,12 +1,13 @@
-let scrollSpeed = 7; 
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
 
-window.addEventListener('wheel', function(event) {
-    event.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
 
-    let delta = event.deltaY || event.detail || event.wheelDelta;
-    if (delta > 0) {
-        window.scrollBy(0, scrollSpeed); 
-    } else {
-        window.scrollBy(0, -scrollSpeed); 
-    }
-}, { passive: false });
+        window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+        });
+    });
+});
