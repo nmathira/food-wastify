@@ -46,5 +46,4 @@ while True:
     last = frame
     counter += 1
 
-    print(motion, std)
     time.sleep(0.2)
