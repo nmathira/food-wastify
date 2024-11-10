@@ -4,7 +4,7 @@ html {
 
 
 body {
-	background-color: #881c1c
+	background-color: #881c1c;	
 }
 
 
@@ -15,11 +15,10 @@ h1 {
 }
 
 
-
 h2 {
 	color: #ffffff;
 	padding-left: 150px;
-	font-family: Arial;
+	font-family: Verdana;
 	font-size: 14pt;
 }
 
@@ -55,17 +54,51 @@ a {
 
 .header {
 		background: #000000;
-		padding:15px;
+		padding: 15px;
 		border-top-left-radius: 20px;
 		border-top-right-radius: 20px;
 }
 
 
-.menu {
-	width: 55px;
-	height: 55px;
-	float: right;
+.header.active {
+		background: #000000;
+		padding:15px;
+		border-radius: 20px;
 }
+
+
+.borgir {
+	float:right;
+	height: 55px; 
+	width: 55px;
+}
+
+
+.navlinks {
+	display: none;
+	list-style: none;
+}
+
+
+.navlinks.active {
+	display: flex;
+	justify-content: center;
+}
+
+
+.navlinks li{	
+	padding-right: 40px;
+	padding-left: 40px;
+}
+
+
+.navlinks a{
+	color: white;
+	font-family: Verdana;
+	font-size: 12pt;
+	text-decoration: none;
+}
+
 
 
 .overlay-main-text {
@@ -96,7 +129,6 @@ a {
       	height: 88.5vh;
       	background-image: url('https://www.umass.edu/sites/default/files/2023-03/umass-sustainable-dining.jpg');
       	background-size: cover;
-      	background-position: center;
       	display: flex; 
       	align-items: center; 
       	justify-content: center;
@@ -122,15 +154,6 @@ a {
 	border-bottom-right-radius: 20px;
 }
 
-
-.arrow-container {
-	position: absolute;
-	height: 55px;
-	width: 55px;
-	border-radius: 50%;
-	background-color: #ffffff;
-}
-	
 
 .arrow{
 	position: absolute;
@@ -166,6 +189,16 @@ a {
 	font-size: 24pt;
 	color: #ffffff;
 	text-align: left;
+
+	opacity: 0;
+	transform: translateY(-10px);
+	transition: opacity 0.75s ease-in-out, transform 0.75s ease-in-out;
+
+}
+
+.focus-left.visible {
+	opacity: 1;
+	transform: translateY(0);
 }
 
 
@@ -205,7 +238,7 @@ a {
     }
 
 
-.test {
+.food {
 	padding: 15px;
 	padding-bottom: 700px;
 	border-radius:20px; 
