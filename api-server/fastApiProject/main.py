@@ -6,15 +6,25 @@ from fastapi import FastAPI, UploadFile
 
 app = FastAPI()
 
-annotation_reference = {
-    "meat": 0.3,
-    "rice": 0.4,
-    "noodle": 0.9,
-    "vegetable": 0.2,
-    "bread": 0.4
+state = {
+
 }
 
-item_reference = ["meat", "noodle", "rice", "vegetable", "bread"]
+sustainability_reference = {
+    "hard_boiled_egg": "B",
+    "oatmeal": "A",
+    "pizza": "A",
+    "french_fries": "A",
+    "burger": "E",
+    "strawberry_yogurt": "B",
+    "scrambled eggs": "B",
+    "grilled_cheese_sandwich": "C",
+    "spring_rolls": "B",
+    "bagel": "C"
+}
+
+
+# item_reference = ["meat", "noodle", "rice", "vegetable", "bread"]
 
 @app.get("/")
 async def root():
@@ -45,48 +55,160 @@ async def upload_image(file: UploadFile):
         return {"error": str(e)}
 
 
-# 4 0.6341974139213562 0.27568519115448 0.1594523787498474 0.03641393780708313
-def calculate_waste_percent(annotations):
-    areas = {}
-    # for index in range(0, len(annotations)):
-    for annotation in annotations:
-        if annotation[0] not in areas:
-            areas[annotation[0]] = 0
+@app.get("/get_data")
+async def get_data():
+    result = []
+    for key, value in state.items():
+        print(value)
+        result.append({
+            "name": value["name"],
+            "sustainability_score": value["sustainability_score"],
+            "times_taken": value["times_taken"],
+            "total_served": value["total_served"],
+        })
 
-        area = annotation[3] * annotation[4]
+        # print(item)
+        # print(state)
+        # result.append({
+        #     "name": item.sustainability_score,
+        #     "times_taken": item.times_taken,
+        #     "total_served": item.served
+        # })
 
-        areas[annotation[0]] += area
-        # print(areas)
-        # break
-
-    return areas
+    return result
 
 
-def test_run_annotations(filepath):
-    data_2d_array = []
+# # 4 0.6341974139213562 0.27568519115448 0.1594523787498474 0.03641393780708313
+# def calculate_waste_percent(annotations):
+#     areas = {}
+#     # for index in range(0, len(annotations)):
+#     for annotation in annotations:
+#         if annotation[0] not in areas:
+#             areas[annotation[0]] = 0
+#
+#         area = annotation[3] * annotation[4]
+#
+#         areas[annotation[0]] += area
+#         # print(areas)
+#         # break
+#
+#     return areas
 
-    # Read the file and split each line into elements
-    with open(filepath, 'r') as file:
-        for line in file:
-            if line == "No valid detections\n":
-                continue
-            # Strip any extra whitespace or newlines and split by spaces
-            row = line.strip().split()
-            # Convert each string in the row to its appropriate type, e.g., float or int
-            row = [int(row[0])] + [float(x) for x in row[1:]]
 
-            # Append the row to the 2D array
-            data_2d_array.append(row)
+# def test_run_annotations(filepath):
+#     data_2d_array = []
+#
+#     # Read the file and split each line into elements
+#     with open(filepath, 'r') as file:
+#         for line in file:
+#             if line == "No valid detections\n":
+#                 continue
+#             # Strip any extra whitespace or newlines and split by spaces
+#             row = line.strip().split()
+#             # Convert each string in the row to its appropriate type, e.g., float or int
+#             row = [int(row[0])] + [float(x) for x in row[1:]]
+#
+#             # Append the row to the 2D array
+#             data_2d_array.append(row)
+#
+#     # Now data_2d_array is a 2D array with each row as a list of numbers
+#     return data_2d_array
 
-    # Now data_2d_array is a 2D array with each row as a list of numbers
-    return data_2d_array
+def process_data(item):
+    if item in sustainability_reference:
+        if item in state:
+            state[item] = {
+                "name": state[item]["name"],
+                "sustainability_score": state[item]["sustainability_score"],
+                "times_taken": state[item]["times_taken"] + 1,
+                "total_served": state[item]["total_served"]
+            }
+        else:
+            state[item] = {
+                "name": item,
+                "sustainability_score": sustainability_reference[item],
+                "times_taken": 0,
+                "total_served": 100
+            }
 
 
 if __name__ == "__main__":
-    # uvicorn.run(app, host="localhost", port=8080)
-    annotations = test_run_annotations("/home/niranjan/documents/projects/hack-umass-2024/ZeroByte/yippeee.txt")
-    araes = calculate_waste_percent(annotations)
-    print(araes)
+    # annotations = test_run_annotations("/home/niranjan/documents/projects/hack-umass-2024/ZeroByte/yippeee.txt")
+    # araes = calculate_waste_percent(annotations)
+    print("here")
+    process_data("oatmeal")
 
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("oatmeal")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
+    process_data("french_fries")
 
-
+    print(state)
+    uvicorn.run(app, host="localhost", port=8080)
+#
