@@ -55,18 +55,30 @@ a {
 .header {
 		background: #000000;
 		padding: 20px;
+		height: 120px;
 		border-radius: 20px;
 }
 
 
 .header-title {
 	position: absolute;
-	top: 1.75%;
-	left:42%;
+	top: 4.5%;
+	left: 46%;
 	font-family: Verdana;
 	color: #ffffff;
 	font-size: 44pt;	
 }
+
+
+.header-subtitle {
+	position: absolute;
+	top: 2%;
+	left: 48.5%;
+	font-family: Verdana;
+	color: #ffffff;
+	font-size: 12pt;	
+}
+
 
 .borgir {
 	float:right;
@@ -77,14 +89,11 @@ a {
 
 
 .navlinks {
-	display: none;
-	list-style: none;
-}
-
-
-.navlinks.active {
 	display: flex;
-	justify-content: center;
+	list-style: none;
+	position: absolute;
+	top: 12%;
+	left: 43.5%;
 }
 
 
@@ -102,14 +111,38 @@ a {
 }
 
 
-.food {
-	padding: 15px;
-	padding-bottom: 30px;
-	border-radius:20px; 
+.item {
+	padding: 30px;
+	border: 3px solid #881c1c;
 	position: center;
 	background-color: #770b0b;
+}
+
+.item-title{
+	color: #ffffff;
+	padding-left: 150px;
+	font-family: Verdana;
+	font-weight: bold;
+}
+
+.item-image{
+	padding-left: 150px;
 	
 }
 
+.item table{
+	padding-left: 40px;
+}
+
+.item td{
+	color: #ffffff;
+	font-family: Verdana;
+	font-weight: normal;
+	
+}
+
+.data-container {
+	display: flex;
+}
 
 
